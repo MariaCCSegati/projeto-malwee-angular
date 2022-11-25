@@ -1,0 +1,26 @@
+<mat-card>
+        <mat-form-field class="example-full-width" appearance="fill" >
+          <mat-label>Insira um grupo</mat-label>
+          <input matInput placeholder="Ex. Camiseta" [(ngModel)]="description">
+        </mat-form-field>
+    <button mat-raised-button (click)="insert()"><mat-icon>add_circle_outline</mat-icon></button>
+
+    <mat-form-field class="example-full-width" appearance="fill" >
+    <mat-label>Busque um grupo</mat-label>
+          <input matInput placeholder="Ex. Camiseta" [(ngModel)]="description">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Modal?</mat-label>
+            <input matInput [(ngModel)]="grupinho">
+          </mat-form-field>
+          <button mat-raised-button (click)="openDialog()">Modal</button>
+</mat-card>
+
+<!--<div *ngFor="let person of group">
+    <p>{{person.description}}</p> 
+ </div> -->
+
+ <div *ngFor="let person of group | filter:description">
+    <p>{{person.description}}</p> 
+ </div>
